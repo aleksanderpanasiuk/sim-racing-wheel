@@ -35,23 +35,20 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(wheel_firmware wheel_firmware.c )
+add_executable(wheel_firmware)
 
-pico_set_program_name(wheel_firmware "wheel_firmware")
-pico_set_program_version(wheel_firmware "0.1")
-
-# Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(wheel_firmware 0)
-pico_enable_stdio_usb(wheel_firmware 1)
-
-# Add the standard library to the build
-target_link_libraries(wheel_firmware
-        pico_stdlib)
+target_sources(wheel_firmware PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}/main.c
+        ${CMAKE_CURRENT_LIST_DIR}/usb_descriptors.c
+        )
 
 # Add the standard include files to the build
-target_include_directories(wheel_firmware PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
-)
+target_include_directories(wheel_firmware PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR})
+
+# Add the standard library to the build
+target_link_libraries(wheel_firmware PUBLIC
+        pico_stdlib pico_unique_id hardware_gpio tinyusb_device tinyusb_board)
 
 pico_add_extra_outputs(wheel_firmware)
 
