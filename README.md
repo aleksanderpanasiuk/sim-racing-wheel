@@ -10,8 +10,8 @@ An open-source, DIY sim racing wheel designed mainly for Formula 1 games, built 
 - Designed for use with F1 2025, ACC and more
 
 ## Work in Progress
-- [ ] read digital & analog signals from buttons, switches, encoders
-- [ ] USB HID mapping, sending controller inputs to PC
+- [X] read digital & analog signals from buttons, switches, encoders
+- [X] USB HID mapping, sending controller inputs to PC
 - [ ] telemetry display and software
 - [ ] enclosure CAD design compatible with MOZA QR system
 - [ ] full assembly
