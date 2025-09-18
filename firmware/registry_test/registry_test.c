@@ -2,9 +2,9 @@
 #include "pico/stdlib.h"
 
 
-#define Q_PIN 13
-#define CLK_PIN 14
-#define SH_LD_PIN 15
+#define Q_PIN 12
+#define CLK_PIN 13
+#define SH_LD_PIN 14
 
 
 int main()
